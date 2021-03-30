@@ -1,7 +1,11 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 
 from .models.pessoa import Pessoa
 from .models.fone import Fone
+from .models.user import CustomUser
+
+admin.site.register(CustomUser, UserAdmin)
 
 class Pessoas(admin.ModelAdmin):
     list_display = ('pessoa_id','cpf_pessoa', 'nome_pessoa', 'username')
